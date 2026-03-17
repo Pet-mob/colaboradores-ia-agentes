@@ -1,0 +1,7 @@
+crewai
+crewai-tools
+openai
+langchain
+chromadb
+python-dotenv
+gitpython
