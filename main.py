@@ -1,3 +1,4 @@
+from config.settings import OPENAI_API_KEY
 from agents.orchestrator import run_ai_team
 
 if __name__ == "__main__":

@@ -1,0 +1,11 @@
+{
+  "name": "pet.on.Api",
+  "description": "Backend API principal da Petmob",
+  "stack": [".NET", "C#"],
+  "type": "api",
+  "repository_url": "",
+  "deployment": {
+    "environment": "production",
+    "platform": ""
+  }
+}

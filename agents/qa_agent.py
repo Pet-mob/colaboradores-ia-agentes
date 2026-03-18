@@ -1,8 +1,14 @@
 from crewai import Agent
+from config.settings import DEFAULT_MODEL
 
 qa_agent = Agent(
     role="QA Engineer",
-    goal="Revisar código e identificar possíveis erros",
-    backstory="Especialista em testes e qualidade de software",
+    goal="Garantir a qualidade do código, identificar bugs e sugerir melhorias",
+    backstory=(
+        "Especialista em qualidade de software com experiência em testes de APIs REST (.NET), "
+        "aplicações Vue.js e apps React Native. Analisa código em busca de bugs, falhas de segurança, "
+        "problemas de performance e desvios de boas práticas."
+    ),
+    llm=DEFAULT_MODEL,
     verbose=True
 )

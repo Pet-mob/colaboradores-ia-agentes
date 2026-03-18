@@ -1,0 +1,11 @@
+{
+  "name": "pet.on.app",
+  "description": "App mobile para usuários finais da Petmob",
+  "stack": ["React Native"],
+  "type": "mobile",
+  "repository_url": "",
+  "deployment": {
+    "environment": "production",
+    "platform": ""
+  }
+}

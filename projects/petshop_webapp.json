@@ -1,0 +1,11 @@
+{
+  "name": "petshop.webapp",
+  "description": "Web app para petshops",
+  "stack": ["Vue.js", "JavaScript"],
+  "type": "frontend",
+  "repository_url": "",
+  "deployment": {
+    "environment": "production",
+    "platform": ""
+  }
+}
