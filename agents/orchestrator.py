@@ -5,9 +5,13 @@ from agents.developer_agent import developer_agent
 from agents.qa_agent import qa_agent
 from tasks.dev_tasks import create_tasks
 from tasks.queue_manager import update_section
+from tools.git_manager import create_demand_branch
 
 
 def run_ai_team(filepath: Path) -> str:
+    branch = create_demand_branch(filepath)
+    print(f"📌 Trabalhando na branch: {branch}\n")
+
     tasks = create_tasks(filepath)
 
     crew = Crew(

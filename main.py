@@ -40,6 +40,32 @@ def prompt_add():
     print(f"\n✅ Arquivo criado: {filepath}")
 
 
+def process_in_progress():
+    in_progress = list_demands(status="in_progress")
+    if not in_progress:
+        print("\n  Nenhuma demanda em andamento.")
+        return
+
+    print("\n--- Demandas em andamento ---")
+    for i, d in enumerate(in_progress, 1):
+        print(f"  {i}. {d['name']}")
+
+    choice = input("\nEscolha o número para processar (0 para cancelar): ").strip()
+    if choice == "0" or not choice.isdigit():
+        return
+
+    idx = int(choice) - 1
+    if idx < 0 or idx >= len(in_progress):
+        print("  Opção inválida.")
+        return
+
+    filepath = in_progress[idx]["file"]
+    print(f"\n🚀 Processando: {filepath.name}")
+    run_ai_team(filepath)
+    move_to_done(filepath)
+    print(f"\n✅ Concluído! Arquivo em: demands/done/{filepath.name}")
+
+
 def process_next():
     filepath = get_next_pending()
     if not filepath:
@@ -61,6 +87,7 @@ if __name__ == "__main__":
         print("2. Adicionar demanda")
         print("3. Processar próxima demanda")
         print("4. Processar todas as pendentes")
+        print("5. Processar demanda em andamento")
         print("0. Sair")
 
         choice = input("\nEscolha: ").strip()
@@ -80,6 +107,8 @@ if __name__ == "__main__":
                 while get_next_pending():
                     process_next()
                 print("\n✅ Todas as demandas foram processadas.")
+        elif choice == "5":
+            process_in_progress()
         elif choice == "0":
             print("Até logo!")
             break
