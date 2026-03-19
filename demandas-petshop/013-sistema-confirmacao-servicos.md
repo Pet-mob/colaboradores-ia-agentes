@@ -124,6 +124,12 @@ Implementar um sistema completo de confirmação de serviços agendados onde a l
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

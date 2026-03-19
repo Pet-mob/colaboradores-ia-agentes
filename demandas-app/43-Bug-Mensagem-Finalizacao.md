@@ -93,3 +93,21 @@ Há problema com a mensagem/confirmação exibida quando usuário finaliza um ag
 - [ ] Validar todas informações aparecem
 - [ ] Testar navegação após confirmação
 - [ ] Melhorar se necessário conforme demanda #32
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

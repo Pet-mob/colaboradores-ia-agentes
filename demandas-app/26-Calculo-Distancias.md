@@ -94,3 +94,21 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 - Implementar fallback se localização não estiver disponível
 - Respeitar privacidade do usuário
 - Documentar permissões necessárias em README
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

@@ -79,3 +79,21 @@ const sortOptions = [
 - Armazenar preferência no localStorage para próximas sessões
 - Indicar qual ordenação está ativa
 - Considerar performance com muitos resultados
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

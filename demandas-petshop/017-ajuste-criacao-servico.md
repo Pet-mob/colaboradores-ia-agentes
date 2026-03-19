@@ -110,6 +110,12 @@ Revisar e ajustar o formulário de criação de serviço. Melhorias na validaç�
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

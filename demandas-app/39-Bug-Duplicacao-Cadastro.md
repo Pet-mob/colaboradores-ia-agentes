@@ -92,3 +92,21 @@ ALTER TABLE usuarios ADD INDEX idx_email (email);
 - [ ] Limpeza manual de duplicatas existentes
 - [ ] Validar mensagem de erro
 - [ ] Testar race condition (duplo submit rápido)
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

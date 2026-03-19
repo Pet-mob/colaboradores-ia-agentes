@@ -106,3 +106,21 @@ Criar nova aba "Fale Conosco" (ou "Contato" / "Suporte") no menu inferior. Esta 
 - Analytics para rastrear tickets
 - Compartilhar ID do ticket com usuário
 - Considerar FAQ/artigos antes de contato
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

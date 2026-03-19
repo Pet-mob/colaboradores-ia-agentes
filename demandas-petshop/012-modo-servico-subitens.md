@@ -121,6 +121,12 @@ Implementar um sistema onde serviços podem ter sub-itens configuráveis que o c
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

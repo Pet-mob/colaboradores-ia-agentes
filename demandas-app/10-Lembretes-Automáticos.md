@@ -98,3 +98,21 @@ Implementar sistema de lembretes automáticos para agendamentos futuros. O aplic
 - Testar em diferentes devices (iOS/Android)
 - Implementar rate limiting para não sobrecarregar com notificações
 - Considerar timezone do usuário
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

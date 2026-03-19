@@ -113,6 +113,12 @@ Implementar um sistema de promoção geral que permita criar, gerenciar e visual
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

@@ -130,6 +130,12 @@ A tela/fluxo de agendamento não está exibindo corretamente em dispositivos mob
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

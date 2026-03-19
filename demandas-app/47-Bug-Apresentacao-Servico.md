@@ -88,3 +88,21 @@ Há problema na exibição/apresentação do serviço agendado. O serviço pode 
 - [ ] Validar dados carregam completamente
 - [ ] Melhorar layout se necessário
 - [ ] Adicionar ellipsis com tooltip se necessário
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

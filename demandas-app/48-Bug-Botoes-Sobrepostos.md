@@ -99,3 +99,21 @@ button: {
 - [ ] Ajustar spacing/alignment
 - [ ] Validar z-index
 - [ ] Testar cliques em todos botões
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

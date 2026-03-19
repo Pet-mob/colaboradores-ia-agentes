@@ -82,3 +82,21 @@ Usuários enfrentam falhas ao tentar se cadastrar na plataforma. O fluxo de regi
 - [ ] Validar confirmação de email
 - [ ] Testar login após cadastro
 - [ ] Confirmar em ambientes (dev/staging/prod)
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

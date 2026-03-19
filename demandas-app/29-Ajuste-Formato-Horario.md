@@ -83,3 +83,21 @@ format(hora, 'HH:mm', { locale: ptBR }); // "14:30"
 - [ ] Testar em todas as telas
 - [ ] Verificar emails/SMS
 - [ ] Validar em diferentes devices
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

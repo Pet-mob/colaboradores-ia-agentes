@@ -100,3 +100,21 @@ Implementar funcionalidade que permite usuário escolher/preferir um tosador esp
 - Testar race conditions (múltiplos usuários selecionando mesmo tosador)
 - Performance com muitos tosadores
 - UI responsiva com múltiplas opções
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

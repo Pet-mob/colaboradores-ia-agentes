@@ -107,3 +107,21 @@ Implementar integração que permite carregar e exibir fotos do pet shop (ambien
 - Cache local de imagens
 - Tratamento de erros de upload
 - UX agradável com preview
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

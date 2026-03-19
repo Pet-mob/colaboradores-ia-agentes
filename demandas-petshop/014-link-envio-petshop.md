@@ -108,6 +108,12 @@ Gerar um link único e compartilhável para cada loja que permite clientes acess
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

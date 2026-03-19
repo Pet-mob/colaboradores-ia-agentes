@@ -119,6 +119,12 @@ Implementar a exibição de porte/tamanho de animal nos serviços. Mostrar clara
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

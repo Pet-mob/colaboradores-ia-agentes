@@ -97,3 +97,21 @@ Feature combinada que integra cadastro de endereço com cálculo automático de 
 - Considerar background updates
 - Testar com geolocalização desativada
 - Performance com muitos petshops (1000+)
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

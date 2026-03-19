@@ -131,6 +131,12 @@ A tela de login não está exibindo corretamente em dispositivos mobile. Há pro
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

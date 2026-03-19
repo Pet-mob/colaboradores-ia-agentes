@@ -95,3 +95,21 @@ Implementar funcionalidade que permite usuário editar informações do pet (nom
 - [ ] Feedback visual (loading/sucesso)
 - [ ] Testar edição de foto
 - [ ] Testar deleção com agendamentos
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

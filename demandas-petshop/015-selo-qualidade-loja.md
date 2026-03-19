@@ -129,6 +129,12 @@ Implementar um sistema de selo/badge de qualidade para lojas com base em critér
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

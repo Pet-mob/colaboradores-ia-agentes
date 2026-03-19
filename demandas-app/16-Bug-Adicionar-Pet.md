@@ -79,3 +79,21 @@ Há um problema no fluxo de adição de novo pet. Usuários enfrentam falhas dur
 - [ ] Validar validação de campos
 - [ ] Testar upload de imagens
 - [ ] Confirmar com stakeholder
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

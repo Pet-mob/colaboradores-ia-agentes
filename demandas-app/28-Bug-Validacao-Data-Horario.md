@@ -84,3 +84,21 @@ Há problema na validação de datas e horários disponíveis para agendamento. 
 - [ ] Testar case de dupla reserva (race condition)
 - [ ] Validar timezone/horário local
 - [ ] Testar com diferentes lojas
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

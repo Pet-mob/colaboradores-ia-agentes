@@ -92,3 +92,21 @@ UPDATE usuarios SET deletedAt = GETDATE(), ativo = 0 WHERE id = @userId;
 - [ ] Testar deleção de usuário com pets/agendamentos
 - [ ] Verificar BD após testes
 - [ ] Limpeza manual de registros órfãos existentes (se necessário)
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

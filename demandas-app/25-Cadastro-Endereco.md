@@ -100,3 +100,21 @@ Implementar fluxo completo de cadastro e gerenciamento de endereços do usuário
 - Armazenar coordenadas para cálculo posterior de distância
 - Validar formato de CEP brasileiro
 - Tratar erros de conexão com API externa
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

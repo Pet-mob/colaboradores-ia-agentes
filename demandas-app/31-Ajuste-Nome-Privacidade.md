@@ -74,3 +74,21 @@ Renomear aba de "Privacidade" para nome mais apropriado conforme padrão definid
 - [ ] Atualizar strings/i18n
 - [ ] Testar navegação
 - [ ] Verificar em menu inferior visualmente
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

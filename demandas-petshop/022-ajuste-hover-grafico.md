@@ -98,6 +98,12 @@ Melhorar a experiência de interação com o gráfico de serviços no dashboard.
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

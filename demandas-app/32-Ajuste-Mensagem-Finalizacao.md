@@ -86,3 +86,21 @@ Você receberá um lembrete 24 horas antes.
 - [ ] Incluir todos os dados necessários
 - [ ] Testar layout em diferentes devices
 - [ ] Validar tonalidade e linguagem
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

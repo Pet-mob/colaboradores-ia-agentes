@@ -92,6 +92,12 @@ Criar um tipo especial de porte chamado "Todos" para serviços que podem ser age
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

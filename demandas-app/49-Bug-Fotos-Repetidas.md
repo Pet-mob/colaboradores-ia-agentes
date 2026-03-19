@@ -94,3 +94,21 @@ await clearCache(`pet_${petId}_foto`);
 - [ ] Testar update de foto
 - [ ] Validar em diferentes telas
 - [ ] Limpar cache durante testes
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._

@@ -175,6 +175,12 @@ Implementar uma nova aba/seção de "Fale Conosco" (ou "Contato", "Suporte") ond
 
 ---
 
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
 ## 💻 Implementação
 
 _Aguardando processamento pelo Developer Agent..._

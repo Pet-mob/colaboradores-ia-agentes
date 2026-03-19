@@ -107,3 +107,21 @@ const atualizarUsuario = async (dados) => {
 - [ ] Adicionar error boundary
 - [ ] Implementar retry logic
 - [ ] Validar em production
+
+---
+
+## 📋 Planejamento
+
+_Aguardando processamento pelo Planner Agent..._
+
+---
+
+## 💻 Implementação
+
+_Aguardando processamento pelo Developer Agent..._
+
+---
+
+## ✅ Revisão de Qualidade
+
+_Aguardando processamento pelo QA Agent..._
