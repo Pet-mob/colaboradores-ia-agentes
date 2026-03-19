@@ -3,6 +3,7 @@
   "description": "Backend API principal da Petmob",
   "stack": [".NET", "C#"],
   "type": "api",
+  "local_path": "C:\\Castanheira Holding\\Pet.ON.Api",
   "repository_url": "",
   "deployment": {
     "environment": "production",

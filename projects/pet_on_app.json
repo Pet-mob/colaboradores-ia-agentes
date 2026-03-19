@@ -3,6 +3,7 @@
   "description": "App mobile para usuários finais da Petmob",
   "stack": ["React Native"],
   "type": "mobile",
+  "local_path": "C:\\Castanheira Holding\\Pet.ON.App",
   "repository_url": "",
   "deployment": {
     "environment": "production",

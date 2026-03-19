@@ -27,11 +27,6 @@ def create_tasks(filepath: Path) -> list:
     demand_type = _extract_metadata(content, "Tipo")
     description = _extract_description(content)
 
-    title = demand["title"]
-    description = demand["description"]
-    project = demand.get("project", "geral")
-    demand_type = demand.get("type", "feature")
-
     task_plan = Task(
         description=(
             f"Você é o Planner Agent da equipe Petmob.\n\n"

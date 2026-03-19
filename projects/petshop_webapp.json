@@ -3,6 +3,7 @@
   "description": "Web app para petshops",
   "stack": ["Vue.js", "JavaScript"],
   "type": "frontend",
+  "local_path": "C:\\Castanheira Holding\\PetShop.WebApp",
   "repository_url": "",
   "deployment": {
     "environment": "production",

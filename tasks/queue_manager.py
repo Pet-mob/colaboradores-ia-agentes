@@ -83,12 +83,24 @@ def move_to_done(filepath: Path) -> Path:
     return dest
 
 
+import re
+
 def update_section(filepath: Path, section: str, content: str) -> None:
-    placeholders = {
-        "plan": "*Aguardando processamento pelo Planner Agent...*",
-        "dev": "*Aguardando processamento pelo Developer Agent...*",
-        "qa": "*Aguardando processamento pelo QA Agent...*",
+    section_headers = {
+        "plan": "## 📋 Planejamento",
+        "dev": "## 💻 Implementação",
+        "qa": "## ✅ Revisão de Qualidade",
     }
+    header = section_headers[section]
     text = filepath.read_text(encoding="utf-8")
-    updated = text.replace(placeholders[section], content.strip())
+
+    # Substitui tudo entre o cabeçalho da seção e o próximo "---" ou fim de arquivo
+    pattern = rf"({re.escape(header)}\n)(.*?)(\n---|\Z)"
+    replacement = rf"\g<1>\n{re.escape(content.strip())}\3"
+    updated = re.sub(pattern, replacement, text, flags=re.DOTALL)
+
+    if updated == text:
+        # Fallback: apenas anexa ao final caso não encontre o cabeçalho
+        updated = text + f"\n\n{header}\n\n{content.strip()}\n"
+
     filepath.write_text(updated, encoding="utf-8")

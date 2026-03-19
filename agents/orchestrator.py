@@ -5,7 +5,7 @@ from agents.developer_agent import developer_agent
 from agents.qa_agent import qa_agent
 from tasks.dev_tasks import create_tasks
 from tasks.queue_manager import update_section
-from tools.git_manager import create_demand_branch
+from tools.git_manager import create_demand_branch, commit_and_push
 
 
 def run_ai_team(filepath: Path) -> str:
@@ -29,5 +29,8 @@ def run_ai_team(filepath: Path) -> str:
         update_section(filepath, "dev", tasks[1].output.raw)
     if tasks[2].output:
         update_section(filepath, "qa", tasks[2].output.raw)
+
+    print("\n🔄 Commitando e fazendo push das alterações...")
+    commit_and_push(filepath, branch)
 
     return tasks[2].output.raw if tasks[2].output else "Sem resultado"
