@@ -1,5 +1,5 @@
 from crewai import Agent
-from config.settings import DEFAULT_MODEL
+from config.settings import DEFAULT_LLM
 
 planner_agent = Agent(
     role="Product Planner",
@@ -9,6 +9,6 @@ planner_agent = Agent(
         "Trabalha nos projetos pet.on.Api (.NET), petshop.webapp (Vue.js) e pet.on.app (React Native). "
         "Cria backlogs claros, define critérios de aceite e detalha tarefas técnicas."
     ),
-    llm=DEFAULT_MODEL,
+    llm=DEFAULT_LLM,
     verbose=True
 )

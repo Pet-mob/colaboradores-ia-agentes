@@ -1,5 +1,5 @@
 from crewai import Agent
-from config.settings import DEFAULT_MODEL
+from config.settings import DEFAULT_LLM
 
 qa_agent = Agent(
     role="QA Engineer",
@@ -9,6 +9,6 @@ qa_agent = Agent(
         "aplicações Vue.js e apps React Native. Analisa código em busca de bugs, falhas de segurança, "
         "problemas de performance e desvios de boas práticas."
     ),
-    llm=DEFAULT_MODEL,
+    llm=DEFAULT_LLM,
     verbose=True
 )

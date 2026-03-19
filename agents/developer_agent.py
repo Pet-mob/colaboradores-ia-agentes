@@ -1,5 +1,5 @@
 from crewai import Agent
-from config.settings import DEFAULT_MODEL
+from config.settings import DEFAULT_LLM
 
 developer_agent = Agent(
     role="Software Developer",
@@ -9,6 +9,6 @@ developer_agent = Agent(
         "Vue.js/JavaScript para aplicações web e React Native para apps mobile. "
         "Segue boas práticas de arquitetura, escreve código modular e documentado."
     ),
-    llm=DEFAULT_MODEL,
+    llm=DEFAULT_LLM,
     verbose=True
 )
