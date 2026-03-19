@@ -92,8 +92,3 @@ def update_section(filepath: Path, section: str, content: str) -> None:
     text = filepath.read_text(encoding="utf-8")
     updated = text.replace(placeholders[section], content.strip())
     filepath.write_text(updated, encoding="utf-8")
-
-
-
-        f.write(f"\n{'='*60}\n")
-        f.write(f"RESULTADO:\n\n{result}\n")
