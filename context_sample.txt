@@ -1,0 +1,230 @@
+Implemente a solução para o bug.
+
+================================================================================
+🔧 CONTEXTO TÉCNICO DETALHADO PARA IMPLEMENTAÇÃO
+================================================================================
+
+# CONTEXTO TÉCNICO DETALHADO PARA DEVELOPER
+
+## ENTIDADES DO BANCO DE DADOS
+
+### User
+Usuário da aplicação (cliente ou admin)
+**Fields:** Id, Name, Email, Phone, ProfileImage, AddressId, CreatedAt
+**Relationships:** Pets, Addresses, Appointments
+
+### Pet
+Animal de estimação (cachorro, gato, etc)
+**Fields:** Id, Name, Type, Breed, Age, Weight, UserId, Photo, VaccineStatus
+**Relationships:** User, Appointments, Services
+
+### PetShop
+Prestador de serviço (clínica, grooming, hotel, etc)
+**Fields:** Id, Name, Email, Phone, Logo, Banner, AddressId, Rating, OpeningHours
+**Relationships:** Address, Services, Appointments, Employees
+
+### Service
+Serviço oferecido por petshop (banho, tosa, consulta, hotel, etc)
+**Fields:** Id, Name, Description, Price, Duration, PetShopId, Category, IsActive
+**Relationships:** PetShop, Appointments, SubServices
+
+### SubService
+Sub-serviço ou add-on de um serviço (ex: hidratação em banho)
+**Fields:** Id, Name, Price, ServiceId, Duration
+**Relationships:** Service
+
+### Appointment
+Agendamento de serviço
+**Fields:** Id, PetId, ServiceId, PetShopId, ScheduledDate, Status, Notes, CreatedAt
+**Relationships:** Pet, Service, PetShop, User
+
+### Address
+Endereço de usuário ou petshop
+**Fields:** Id, Street, Number, City, State, ZipCode, Latitude, Longitude
+**Relationships:** User, PetShop
+
+## APIs DISPONÍVEIS
+
+### Users
+- `GET /api/users` - Listar todos os usuários
+- `GET /api/users/{id}` - Obter usuário por ID com pets e endereços
+- `POST /api/users` - Criar novo usuário
+- `PUT /api/users/{id}` - Atualizar perfil do usuário
+
+### Pets
+- `GET /api/users/{userId}/pets` - Listar pets de um usuário
+- `POST /api/users/{userId}/pets` - Adicionar novo pet ao usuário
+- `PUT /api/pets/{id}` - Editar dados do pet
+- `DELETE /api/pets/{id}` - Deletar pet (soft delete com flag IsDeleted)
+
+### PetShops
+- `GET /api/petshops` - Listar petshops próximos com filtro de distância
+- `GET /api/petshops/{id}` - Detalhes completo do petshop + serviços + horários
+- `GET /api/petshops/{id}/services` - Listar serviços de um petshop
+- `GET /api/petshops/search` - Buscar petshops por nome, tipo, com paginação
+
+### Services
+- `GET /api/services/{id}` - Detalhes do serviço + preço + sub-serviços
+- `GET /api/services/{id}/availability` - Horários disponíveis para agendamento
+- `POST /api/petshops/{petshopId}/services` - Criar novo serviço no petshop (admin)
+
+### Appointments
+- `GET /api/users/{userId}/appointments` - Listar agendamentos do usuário (com filtro por status)
+- `POST /api/appointments` - Criar novo agendamento
+- `PUT /api/appointments/{id}` - Atualizar agendamento (data/hora/notas)
+- `PUT /api/appointments/{id}/cancel` - Cancelar agendamento
+- `PUT /api/appointments/{id}/confirm` - Confirmar presença no agendamento
+
+### Addresses
+- `GET /api/users/{userId}/addresses` - Listar endereços do usuário
+- `POST /api/users/{userId}/addresses` - Adicionar novo endereço
+
+## TELAS DO PETSHOP WEBAPP (Vue.js)
+
+### Home/Dashboard - `/`
+Listagem de petshops próximos, busca, filtros
+**Componentes:** PetShopCard, SearchBar, FiltersPanel, MapView
+
+### PetShop Detail - `/petshop/:id`
+Detalhes completo: serviços, avaliações, horários, contact
+**Componentes:** ServiceList, ReviewCard, BookingButton, PhotoGallery
+
+### Service Detail - `/service/:id`
+Detalhes do serviço, preço, sub-serviços, disponibilidade
+**Componentes:** ServiceInfo, PriceBreakdown, TimeSlotPicker, AddToCart
+
+### My Pets - `/my-pets`
+Listagem e gerenciamento de pets do usuário
+**Componentes:** PetList, PetCard, AddPetModal, EditPetModal
+
+### My Appointments - `/my-appointments`
+Histórico e agendamentos futuros
+**Componentes:** AppointmentList, AppointmentCard, TimelineView
+
+### Booking Checkout - `/checkout`
+Confirmação: pet, serviço, data/hora, observações
+**Componentes:** BookingSummary, DateTimePicker, NotesInput, ConfirmButton
+
+### Profile - `/profile`
+Dados do usuário, foto, endereços, preferências
+**Componentes:** ProfileForm, AddressList, SettingsPanel
+
+## TELAS DO PET.ON.APP (React Native)
+
+### Splash Screen
+Tela inicial com logo e animação
+
+### Login Screen
+Email/senha com opção de cadastro
+
+### Register Screen
+Cadastro de novo usuário
+
+### Home Tab
+Tab principal - petshops próximos com mapa
+**Componentes:** MapView, PetShopList, SearchBar, FilterButton
+
+### PetShop Detail Screen
+Detalhes: info, serviços, avaliações, galeria
+**Componentes:** HeaderImage, InfoSection, ServiceList, ReviewSection
+
+### Booking Screen
+Agendamento multi-passo: pet → serviço → data/hora → confirmar
+
+### My Appointments Tab
+Listagem de agendamentos com status
+**Componentes:** AppointmentCard, StatusBadge, CancelButton
+
+### My Pets Tab
+Gerenciamento de pets do usuário
+**Componentes:** PetCard, AddPetButton, PetModal
+
+### Profile Tab
+Perfil do usuário com settings
+**Componentes:** ProfileHeader, InfoSection, SettingsPanel
+
+## PADRÕES ARQUITETURAIS A SEGUIR
+
+### Backend (.NET)
+- **Controller:** Entrada HTTP, validação de rota
+- **Service:** Lógica de negócio, orquestra repositórios
+- **Repository:** Acesso a dados com EF Core
+- **Model:** Entidade do banco de dados
+- **ViewModel:** DTO para resposta HTTP
+- **Validator:** Validação FluentValidation
+- **Mapper:** AutoMapper Model → ViewModel
+- **Middleware:** CORS, Auth, Error Handling
+
+### Frontend (Vue.js)
+- **Component:** UI + lógica local
+- **View:** Página inteira
+- **Store:** Pinia - estado global
+- **Service:** Chamadas HTTP fetch/axios
+- **Router:** Navegação entre páginas
+- **Utils:** Helpers reutilizáveis
+- **Types:** TypeScript interfaces
+
+### Mobile (React Native)
+- **Screen:** Página inteira
+- **Component:** Componente reutilizável
+- **Store:** Redux - estado global
+- **Service:** Chamadas HTTP fetch
+- **Navigation:** React Navigation
+- **Utils:** Helpers reutilizáveis
+- **Styles:** StyleSheet
+
+
+
+## BACKEND (.NET) - Padrão Controller/Service/Repository
+
+```csharp
+// Controller
+[ApiController]
+[Route("api/[controller]")]
+public class ResourceController : ControllerBase
+{
+    private readonly IResourceService _service;
+    public ResourceController(IResourceService service) => _service = service;
+    
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<ResourceViewModel>>> GetAll()
+    {
+        var resources = await _service.GetAllAsync();
+        return Ok(resources);
+    }
+}
+
+// Service
+public class ResourceService : IResourceService
+{
+    private readonly IResourceRepository _repository;
+    public ResourceService(IResourceRepository repository) => _repository = repository;
+    
+    public async Task<IEnumerable<ResourceViewModel>> GetAllAsync()
+    {
+        return await _repository.GetAllAsync();
+    }
+}
+```
+
+
+================================================================================
+📋 CHECKLIST DE CÓDIGO ESPERADO
+================================================================================
+
+FORMATO OBRIGATÓRIO para cada arquivo:
+
+# File: src/path/to/FileName.ext
+```language
+// seu código aqui
+```
+
+✓ Imports/exports completos
+✓ Tipo em TypeScript (interfaces, types)
+✓ Tratamento de erro com try-catch
+✓ Validações de entrada
+✓ Seguir padrões (Controller → Service → Repository)
+✓ Conectar com APIs existentes
+✓ Comentários nas partes não óbvias
+
+================================================================================

@@ -65,7 +65,7 @@ def create_demand_branch(demand_filepath: Path) -> str:
     repo_path = _get_project_repo(project_name)
 
     if not repo_path or not repo_path.exists():
-        print(f"⚠️  Repositório local não encontrado para '{project_name}'. Branch não criada.")
+        print(f"[WARNING] Repositório local não encontrado para '{project_name}'. Branch não criada.")
         return branch
 
     try:
@@ -84,7 +84,7 @@ def create_demand_branch(demand_filepath: Path) -> str:
                 capture_output=True,
                 text=True
             )
-            print(f"🔀 Branch existente, checkout em '{repo_path.name}': {branch}")
+            print(f"[CHECKOUT] Branch existente, checkout em '{repo_path.name}': {branch}")
         else:
             subprocess.run(
                 ["git", "checkout", "-b", branch],
@@ -93,10 +93,10 @@ def create_demand_branch(demand_filepath: Path) -> str:
                 capture_output=True,
                 text=True
             )
-            print(f"🌿 Branch criada em '{repo_path.name}': {branch}")
+            print(f"[NEW BRANCH] Branch criada em '{repo_path.name}': {branch}")
 
     except subprocess.CalledProcessError as e:
-        print(f"⚠️  Erro ao criar branch em '{repo_path}': {e.stderr.strip()}")
+        print(f"[ERROR] Erro ao criar branch em '{repo_path}': {e.stderr.strip()}")
 
     return branch
 
@@ -109,7 +109,7 @@ def commit_and_push(demand_filepath: Path, branch: str) -> None:
     repo_path = _get_project_repo(project_name)
 
     if not repo_path or not repo_path.exists():
-        print(f"⚠️  Repositório local não encontrado para '{project_name}'. Commit/push ignorado.")
+        print(f"[WARNING] Repositório local não encontrado para '{project_name}'. Commit/push ignorado.")
         return
 
     demand_id = demand_filepath.stem  # ex: 044-bug-dados-incorretos
@@ -129,41 +129,69 @@ def commit_and_push(demand_filepath: Path, branch: str) -> None:
         )
 
         if not status.stdout.strip():
-            print(f"ℹ️  Nenhuma alteração para commitar em '{repo_path.name}'.")
+            print(f"[INFO] Nenhuma alteração para commitar em '{repo_path.name}'.")
             return
 
         subprocess.run(
             ["git", "add", "."],
             cwd=str(repo_path), check=True, capture_output=True, text=True
         )
-        print(f"📦 git add . em '{repo_path.name}'")
+        print(f"[GIT] git add . em '{repo_path.name}'")
 
         subprocess.run(
             ["git", "commit", "-m", commit_msg],
             cwd=str(repo_path), check=True, capture_output=True, text=True
         )
-        print(f"✅ Commit: {commit_msg}")
+        print(f"[OK] Commit: {commit_msg}")
 
         # Monta URL autenticada com token se disponível
         token = os.getenv("GITHUB_TOKEN", "").strip()
-        push_env = None
+        original_remote_url = None
+        
         if token:
-            remote_url = subprocess.run(
+            # Salva URL original
+            original_remote_url = subprocess.run(
                 ["git", "remote", "get-url", "origin"],
                 cwd=str(repo_path), capture_output=True, text=True
             ).stdout.strip()
-            # Injeta token: https://token@github.com/...
-            auth_url = re.sub(r"https://", f"https://{token}@", remote_url)
+            
+            # Injeta token na URL
+            auth_url = re.sub(r"https://", f"https://{token}@", original_remote_url)
+            
+            # Atualiza remote temporariamente
             subprocess.run(
-                ["git", "push", "--set-upstream", auth_url, branch],
+                ["git", "remote", "set-url", "origin", auth_url],
                 cwd=str(repo_path), check=True, capture_output=True, text=True
             )
+            
+            try:
+                subprocess.run(
+                    ["git", "push", "-u", "origin", branch],
+                    cwd=str(repo_path), check=True, capture_output=True, text=True
+                )
+            finally:
+                # Restaura URL original (sem token exposto)
+                subprocess.run(
+                    ["git", "remote", "set-url", "origin", original_remote_url],
+                    cwd=str(repo_path), check=True, capture_output=True, text=True
+                )
         else:
+            # Sem token, usa configuração default de credenciais
             subprocess.run(
-                ["git", "push", "--set-upstream", "origin", branch],
+                ["git", "push", "-u", "origin", branch],
                 cwd=str(repo_path), check=True, capture_output=True, text=True
             )
-        print(f"🚀 Push para origin/{branch} em '{repo_path.name}'")
+        
+        print(f"[PUSH] Push para origin/{branch} em '{repo_path.name}'")
+        
+        # Atualiza referências remotas localmente
+        try:
+            subprocess.run(
+                ["git", "fetch", "--prune"],
+                cwd=str(repo_path), check=True, capture_output=True, text=True, timeout=30
+            )
+        except subprocess.CalledProcessError:
+            pass  # Não é crítico se falhar
 
     except subprocess.CalledProcessError as e:
-        print(f"⚠️  Erro no commit/push em '{repo_path}': {e.stderr.strip()}")
+        print(f"[ERROR] Erro no commit/push em '{repo_path}': {e.stderr.strip()}")
